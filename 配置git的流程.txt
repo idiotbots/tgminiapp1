@@ -1,0 +1,40 @@
+1. 安装git
+   直接官网下载：https://git-scm.com/download/win
+
+2.创建仓库
+	git init - 初始化仓库。
+	git add . - 添加文件到暂存区。
+	git commit -m '初始化项目版本' - 提交并备注信息，将暂存区内容添加到仓库中。
+
+3. 下载ton.org上的“TMA示例”的库（参考https://docs.ton.org/mandarin/develop/dapps/telegram-apps/app-examples）
+   首先进入要建立项目的目录 D:\tonlab\，再cmd执行以下指令
+    git clone https://github.com/Telegram-Mini-Apps-Dev/vanilla-js-boilerplate.git
+   会再tonlab下建立项目的目录 vanilla-js-boilerplate
+
+--------------以上步骤是在本地建立git仓库-------------------
+--------------以下是将本地git仓库与github连接上，并上传代码-----------
+ (github.com是git的远程仓库中的一个，还有其他的远程仓库)
+
+.配置git
+   由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过SSH加密的，
+    所以我们需要配置验证信息，也就是 ssh key
+   这一步是把本地库跟github连接上的关键，类似于cookie或用户名
+    1.首先在本地创建ssh key
+      $ ssh-keygen -t rsa -C "your_email@youremail.com"
+      然后将生成的key，复制到github的SSH KEYS里
+
+    2.个人的用户名称和电子邮件地址，这是为了在每次提交代码时记录提交者的信息
+    git config --global user.name "idiotbots"
+    git config --global user.email "kinleylee@yahoo.com"
+
+
+5.在github上建立自己的库
+	# 提交到 Github
+	$ git remote add origin git@github.com:idiotbots/tgminiapp1.git
+	$ git push -u origin main
+
+
+
+
+
+
